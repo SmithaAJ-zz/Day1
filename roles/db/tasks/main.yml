@@ -16,7 +16,7 @@
   register: data
 
 - name: Ensure PostgreSQL database is initialized.
-  command: postgresql-setup initdb
+  command: service postgresql initdb
   when: data.stat.exists != True
 
 - name: start PostgreSQL
