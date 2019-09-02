@@ -11,7 +11,7 @@
     enabled: yes
     
 - name: Check if PostgreSQL database is initialized.
-   stat:
+  stat:
     path: /var/lib/pgsql/data/PG_VERSION
   register: db
 
