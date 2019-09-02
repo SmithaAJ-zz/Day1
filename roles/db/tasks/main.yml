@@ -13,7 +13,7 @@
 - name: Check if PostgreSQL database is initialized.
   stat:
     path: /var/lib/pgsql/data/PG_VERSION
-  register: db
+  register: data
 
 - name: Ensure PostgreSQL database is initialized.
   command: postgresql-setup initdb
