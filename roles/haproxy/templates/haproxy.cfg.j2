@@ -26,7 +26,7 @@ backend app-servers
     balance roundrobin
     option forwardfor
     {% for backend in groups.apps %}
-        server {{ hostvars[backend]['inventory_hostname']}}:{{ app_port }} cookie {{ hostvars[backend]['inventory_hostname_short'] }} check
+        server {{ hostvars[backend]['inventory_hostname']}}:{{ httpd_port }} cookie {{ hostvars[backend]['inventory_hostname_short'] }} check
     {% endfor %}
     
     #server app1 app1.9f40.internal:8080 cookie app1 check
