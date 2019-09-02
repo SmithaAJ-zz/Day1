@@ -1,2 +1,8 @@
 ---
-# tasks file for management
+# Enable Repository
+  tasks:
+  - name: enable repos
+    template:
+      src: ./open_three-tier-app.repo
+      dest: /etc/yum.repos.d/3tier.repo
+      mode: 0644
