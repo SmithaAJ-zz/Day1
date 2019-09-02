@@ -17,10 +17,8 @@
 
 - name: Ensure PostgreSQL database is initialized.
   command: postgresql-setup initdb
-  when: db.stat.exists !=
-  become: true
-  become_user: "{{ postgresql_user }}"
-  
+  when: db.stat.exists != True
+
 - name: start PostgreSQL
   service:
     name: postgresql.service
